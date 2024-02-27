@@ -14,6 +14,9 @@
   html {
     font-size: 87.5%;
   }
+  /* 16px =100%
+  14px =?%
+  87,5% */
 
   .wrapper {
     grid-template-columns: 1fr;
