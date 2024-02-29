@@ -1,21 +1,24 @@
 import { Avatar } from './Avatar';
-import styles from './Post.module.css';
 import { Comment } from './Comment';
 
-export function Post() {
-    return (
-        <article className={styles.post}>
-            <header>
-                <div className={styles.author}>
-                <Avatar src="https://github.com/Gabrielcafens.png" />
-                    <div className={styles.authorInfo}>
-                        <strong>Gabriel Café</strong>
-                        <span>Web Developer</span>
+import styles from './Post.module.css';
 
-                    </div>
-                </div>
+export function Post(props) {
+  console.log(props);
 
-                <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:00">Publicado há 1h</time>
+  return (
+    <article className={styles.post}>
+      <header>
+        <div className={styles.author}>
+          <Avatar src="https://github.com/Gabrielcafens.png" />
+          <div className={styles.authorInfo}>
+            <strong>Gabriel Café</strong>
+            <span>Web Developer</span>
+
+          </div>
+        </div>
+
+        <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:00">Publicado há 1h</time>
       </header>
       <div className={styles.content}>
         <p>Fala galeraa 👋</p>
