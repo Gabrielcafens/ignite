@@ -30,8 +30,12 @@ export function Post({ author, publishedAt, content }) {
   function handleNewCommentChange() {
     setNewCommentText(event.target.value);
   }
-  function deleteComment(comment) {
-    console.log(`Deletar comentário ${comment}`)
+  function deleteComment(commentToDelete) {
+    const commentsWithoutDeletedOne = comments.filter(comment => {
+      return comment !== commentToDelete;
+    })
+
+    setComments(commentsWithoutDeletedOne);
   }
 
   return (
@@ -56,7 +60,7 @@ export function Post({ author, publishedAt, content }) {
             return <p key={line.content}>{line.content}</p>;
           } else if (line.type === 'link') {
             return <p key={line.content}><a href="#">{line.content}
-          </a></p>
+            </a></p>
           }
         })}
       </div>
@@ -76,7 +80,7 @@ export function Post({ author, publishedAt, content }) {
 
         <Comment />
         {comments.map(comment => {
-           return (
+          return (
             <Comment
               key={comment}
               content={comment}
